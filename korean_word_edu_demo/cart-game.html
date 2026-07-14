@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>장바구니 게임 | Interactive Korean Learning Demo</title>
+  <meta name="description" content="상품을 장바구니에 담으며 물건, 수량, 단위 명사와 가격 표현을 연습하는 초급 한국어 웹 활동 데모입니다." />
+  <meta name="theme-color" content="#fff8ee" />
+
+  <link rel="stylesheet" href="./assets/css/cart-game.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <a class="lobby-button" href="./index.html">← 데모 목록으로</a>
+
+    <header class="hero">
+      <p class="eyebrow">초급 한국어 활동</p>
+      <h1>장바구니 게임</h1>
+      <p class="hero-text">
+        상품의 + 버튼을 눌러 장바구니에 담고, “무엇을 사요?”에 대답해 보세요.
+      </p>
+
+      <div class="level-selector" aria-label="활동 레벨 선택">
+  <button class="level-button active" type="button" data-level="1">
+    레벨 1
+    <span>사과를 사요</span>
+  </button>
+
+  <button class="level-button" type="button" data-level="2">
+    레벨 2
+    <span>사과 한 개를 사요</span>
+  </button>
+
+<button class="level-button" type="button" data-level="3">
+  레벨 3
+  <span>모두 얼마예요?</span>
+</button>
+</div>
+    </header>
+
+    <!-- 점원 NPC 영역 -->
+    <section class="npc-panel card">
+      <div class="npc-portrait-wrap">
+        <img id="npcImage" class="npc-portrait" src="" alt="점원 NPC" />
+      </div>
+
+      <div class="npc-info">
+        <p class="npc-label">오늘의 점원 NPC</p>
+        <h2 id="npcName">점원</h2>
+        <p id="npcRole" class="npc-role">상점 안내</p>
+
+        <div class="npc-dialogue-box">
+          <p id="npcDialogue">어서 오세요! 필요한 물건을 골라 보세요.</p>
+        </div>
+      </div>
+    </section>
+
+    <main class="shop-layout">
+      <!-- 왼쪽: 상품 페이지 -->
+      <section class="product-panel" aria-labelledby="productTitle">
+        <div class="section-heading">
+          <h2 id="productTitle">상품</h2>
+          <p>+ 버튼을 눌러 장바구니에 담으세요.</p>
+        </div>
+
+        <div id="productGrid" class="product-grid">
+          <!-- JS에서 상품 카드 생성 -->
+        </div>
+      </section>
+
+      <!-- 오른쪽: 장바구니 -->
+      <aside class="cart-panel" aria-labelledby="cartTitle">
+        <div class="section-heading cart-heading">
+          <div>
+            <h2 id="cartTitle">장바구니</h2>
+            <p id="cartStatus">아직 담은 물건이 없어요.</p>
+          </div>
+
+          <button id="clearCartButton" class="clear-button" type="button">
+            비우기
+          </button>
+        </div>
+
+<div id="cartList" class="cart-list empty">
+  <p class="empty-message">상품을 담아 보세요.</p>
+</div>
+
+<div id="cartTotalBox" class="cart-total-box hidden">
+  <p class="cart-total-label">총 가격</p>
+  <p id="cartTotalNumber" class="cart-total-number">0원</p>
+  <p id="cartTotalKorean" class="cart-total-korean">영 원</p>
+</div>
+
+<div class="speech-box">
+  <p id="speechQuestion" class="speech-question">무엇을 사요?</p>
+  <p id="answerPreview" class="speech-answer">아직 없어요.</p>
+</div>
+      </aside>
+    </main>
+
+    <footer class="demo-footer">
+      <p>Interactive Korean Learning Prototype · 초급 한국어 웹 활동 데모</p>
+    </footer>
+  </div>
+
+  <script src="./assets/js/cart-game.js"></script>
+</body>
+</html>
